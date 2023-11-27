@@ -1,11 +1,15 @@
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
+dead.textContent = 0
+lost.textContent = 0
 
 getHole = index => document.getElementById(`hole${index}`)
 
 for (let i = 1; i < 10; i ++) {
-    hole = getHole(i)
+    const hole = getHole(i)
     hole.onclick = () => {
+        console.log(hole.classList)
+        console.log(hole.className)
         if (hole.classList.contains('hole_has-mole') == true) {
             dead.textContent = Number(dead.textContent) + 1
         } else {
